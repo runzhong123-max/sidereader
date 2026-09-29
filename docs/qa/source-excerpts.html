@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>原文摘录展示验收 · SideReader</title>
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface); color: var(--ink); font: 14px system-ui; }
+  h1 { font-size: 18px; margin-bottom: 12px; }
+  main { display: flex; flex-wrap: wrap; gap: 32px; align-items: start; }
+  section { width: min(320px, 100%); }
+  h2 { font-size: 13px; margin: 24px 0 8px; }
+  .case { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .case > small { display: block; color: var(--green); margin-bottom: 5px; }
+  #theme { padding: 6px 10px; margin-bottom: 14px; background: var(--soft); color: var(--ink); }
+  .source-evidence-excerpt::after { content: attr(data-status) " " attr(title); display: block; font: 10px monospace; color: var(--secondary); }
+</style>
+<body class="compact-app">
+<h1>原文摘录 · 320 像素验收</h1>
+<button id="theme">切换亮暗</button>
+<small id="visibility"></small>
+<main id="root"></main>
+<script type="module">
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import SourceExcerpt from '/src/components/SourceExcerpt.tsx';
+  import SourceEvidenceExcerpt from '/src/components/SourceEvidenceExcerpt.tsx';
+  import pdfCases from './source-excerpt-pdf-cases.json';
+  import '/src/reading-experience.css';
+  import '/src/theme.css';
+  const samples = [
+    ['原始 PDF 窄行', '150 第7章 贝叶斯分类器\nN 为正态分布，参见附\n录 C.I.7.\n基于有限训练样本直接\n估计联合概率，在计算上\n将会遭遇组合爆炸问题，\n在数据上将会遭遇样本稀\n疏问题；属性数越多，问题\n越严重.\n此时参数ec的极大似然估计oc为\n0c = arg m ax LL(^C) . (7.11)\nec'],
+    ['完整公式', '## 条件风险\n\n按**后验概率**加权得到：\n\n$$\nR(c_i\\mid x)=\\sum_{j=1}^{N}\\lambda_{ij}P(c_j\\mid x)\n$$\n\n选择风险最小的类别。'],
+    ['未标记的公式与换行', '7.1 贝叶斯决策论\n此时条件风险\nR(c | x) = 1 - P(c | x),\n于是，选择风险最小的类别。'],
+    ['命中在长段落后部', '无关的开场内容。'.repeat(45) + '核方法通过映射使用特征空间中的内积，帮助构造非线性模型。', '核方法'],
+    ['列表与表格', '### 两条路线\n\n1. 直接估计后验。\n2. 建模联合分布。\n\n| 路线 | 概率 |\n|---|---|\n| 判别式 | $P(c\\mid x)$ |\n| 生成式 | $P(x,c)$ |'],
+    ['缺失字符', '这一处文字含有 \uFFFD，公式 $\\frac{x}{ 是截断的，不能自动猜测。'],
+  ];
+  const h = React.createElement;
+  createRoot(document.getElementById('root')).render([true, false].map(compact => h('section', {key: String(compact)},
+    h('h2', null, compact ? '列表：短段落与独立公式' : '浮层内容：完整摘录'),
+    ...pdfCases.map(data => h('div', {className: 'case', key: data.page}, h('small', null, `真实原页 · ${data.page}`), h(SourceEvidenceExcerpt, {...data, compact}))),
+    ...samples.map(([title, text, query]) => h('div', {className: 'case', key: title}, h('small', null, title), h(SourceExcerpt, {text, query, compact}))))));
+  document.getElementById('theme').onclick = () => document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  const updateVisibility = () => document.getElementById('visibility').textContent = document.visibilityState;
+  document.addEventListener('visibilitychange', updateVisibility); updateVisibility();
+</script>
+</body>
+</html>

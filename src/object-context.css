@@ -1,0 +1,7 @@
+.object-context { display: flex; flex: none; align-items: center; flex-wrap: wrap; gap: 4px 14px; color: var(--muted, #727e77); font-size: 12px; line-height: 1.6; }
+.object-context > span { min-width: 0; overflow-wrap: anywhere; }
+.object-context .text-button { padding: 2px 0; font-size: inherit; }
+.reference-graph > .object-context { padding: 8px 14px; border-bottom: 1px solid var(--border, #e4e9e4); }
+.conversation-graph-card > .object-context { padding: 0 0 6px; }
+.practice-inline-check > .object-context { padding: 4px 0 8px; }
+.practice-file-meta .object-context { width: 100%; }

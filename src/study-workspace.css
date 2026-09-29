@@ -1,0 +1,118 @@
+/* Spatial changes are explicit. Never animate widths: PDF text must stay still. */
+.compact-app .study-modes { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid #dce2de; border-radius: 8px; background: #f2f5f3; }
+.compact-app .study-modes button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 30px; padding: 5px 11px; border-radius: 5px; color: var(--secondary); font-size: 12px; white-space: nowrap; }
+.compact-app .study-modes button[aria-pressed="true"] { background: var(--surface); color: var(--dark); box-shadow: 0 1px 3px #18352214; }
+.compact-app .is-reading .project-tabs { flex-shrink: 0; }
+.compact-app.reading-focused .project-tabs { display: none; }
+.compact-app.is-reading .new-chat-button,
+.compact-app.is-reading .resume-reading-button { display: none; }
+.compact-app .project-top-actions { min-width: 0; }
+.compact-app .compare-source-button { font-size: 12px; white-space: nowrap; }
+.compact-app .study-workspace { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.compact-app .study-workspace.companion-on-left { flex-direction: row-reverse; }
+.compact-app .study-workspace .reader-main > .page { height: 100%; overflow: auto; }
+.compact-app .study-workspace .reader-main > .project-conversation { height: 100%; }
+.compact-app .main-shell { position: relative; }
+.workspace-drop-zones { position: absolute; inset: 0; z-index: 80; pointer-events: none; --float-zone-height: min(112px, 24%); }
+.workspace-drop-zone { position: absolute; border: 1px dashed #a8bcae; background: #f1f5f06b; display: grid; place-items: center; color: #3d5c46; font-size: 13px; }
+.workspace-drop-zone.is-left { inset: 0 76% 0 0; }
+.workspace-drop-zone.is-right { inset: 0 0 0 76%; }
+.workspace-drop-zone.is-main { inset: 0 24% var(--float-zone-height); }
+.workspace-drop-zone.is-float { bottom: 0; left: 24%; right: 24%; height: var(--float-zone-height); }
+.workspace-drop-zones.is-narrow .workspace-drop-zone { left: 0; right: 0; }
+.workspace-drop-zone.is-active { background: color-mix(in srgb, var(--sage) 92%, transparent); border: 2px solid var(--green); }
+.workspace-drop-zone > span { max-width: calc(100% - 12px); padding: 9px 12px; border-radius: 7px; background: #fffffff2; box-shadow: 0 2px 12px #26392d16; text-align: center; }
+.workspace-drop-zone.is-active > span { color: var(--green); font-weight: 600; }
+.paper-location[draggable="true"] { cursor: grab; }
+.compact-app .study-workspace .reader-main { flex: 1 1 0%; min-width: 0; overflow: hidden; }
+.compact-app .study-workspace [hidden] { display: none !important; }
+.compact-app .study-workspace .reader { height: 100%; min-height: 0; }
+.compact-app .study-workspace .document-scroll { overflow-anchor: none; }
+.compact-app .study-companion { display: flex; flex-direction: column; flex: 0 0 auto; height: 100%; min-width: 0; overflow: hidden; background: var(--surface); container: companion / inline-size; }
+.compact-app .companion-toolbar { position: relative; z-index: 20; display: flex; align-items: center; flex: 0 0 44px; gap: 5px; padding: 0 10px; border-bottom: 1px solid var(--border); color: var(--secondary); }
+.compact-app .companion-toolbar > svg { flex-shrink: 0; }
+.compact-app .expanded-companion-header { flex: 1; min-width: 0; }
+.compact-app .expanded-companion-header[hidden], .compact-app .paper-location[hidden] { display: none; }
+.compact-app .companion-toolbar.is-global { height: 44px; padding: 0; border: 0; }
+.compact-app .companion-title { display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1; max-width: 100%; color: var(--ink); font-size: 12px; height: 34px; cursor: grab; user-select: none; }
+.compact-app .companion-title > svg { flex-shrink: 0; color: var(--secondary); opacity: .6; }
+.compact-app .companion-title > strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.compact-app .companion-title:active { cursor: grabbing; }
+.compact-app .companion-title[draggable="false"] { cursor: default; }
+.compact-app .companion-toolbar .action-menu-panel { width: 166px; }
+.compact-app .companion-return { padding: 6px 9px; min-height: 32px; border-radius: 6px; background: var(--sage); color: var(--green); font-size: 12px; white-space: nowrap; }
+.compact-app .companion-content { flex: 1; min-height: 0; min-width: 0; overflow: auto; overscroll-behavior: contain; }
+.compact-app .companion-content.companion-tutor { overflow: hidden; }
+.compact-app .companion-content > .tutor { height: 100%; width: 100%; min-width: 0; position: static; box-shadow: none; border: 0; background: var(--surface); }
+.compact-app .companion-expanded .companion-content .tutor .conversation,
+.compact-app .single-pane .companion-content .tutor .conversation { padding-inline: max(20px, calc((100% - 760px) / 2)); }
+.compact-app .companion-expanded .companion-content .tutor .composer-wrap,
+.compact-app .single-pane .companion-content .tutor .composer-wrap { width: 100%; max-width: 800px; margin-inline: auto; }
+.compact-app .study-splitter { position: relative; width: 12px; flex: 0 0 12px; display: flex; justify-content: center; align-items: center; background: #eef1ef; border-inline: 1px solid #e1e5e2; cursor: col-resize; touch-action: none; user-select: none; z-index: 3; }
+.compact-app .study-splitter::before { content: ""; position: absolute; inset: 0 -6px; }
+.compact-app .study-splitter span { width: 3px; height: 34px; border-radius: 3px; background: #b5c0b8; pointer-events: none; }
+.compact-app .study-splitter:hover,
+.compact-app .study-splitter:focus-visible,
+.compact-app .is-resizing .study-splitter { background: #e0eae2; }
+.compact-app .study-splitter:hover span,
+.compact-app .study-splitter:focus-visible span { background: var(--green); }
+.compact-app .study-splitter:focus-visible { outline: 2px solid #3269b4; outline-offset: -2px; }
+.compact-app .is-resizing { cursor: col-resize; user-select: none; }
+.compact-app .is-resizing .reader-main,
+.compact-app .is-resizing .study-companion { pointer-events: none; }
+.compact-app .reference-document { max-width: 850px; margin: 0 auto; padding: 24px; color: var(--ink); font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+.compact-app .reference-document h2 { font-size: 20px; margin: 0 0 20px; }
+.compact-app .reference-document h3 { font-size: 16px; line-height: 1.6; }
+.compact-app .reference-empty { color: var(--secondary); font-size: 14px; }
+.compact-app .reference-stage { padding: 0 0 22px; margin-bottom: 22px; border-bottom: 1px solid var(--border); }
+.compact-app .reference-stage p { margin-top: 10px; }
+.compact-app .reference-stage-title { display: flex; align-items: center; gap: 8px; }
+.compact-app .reference-stage-title h3 { flex: 1; }
+.compact-app .reference-check { flex-shrink: 0; display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #a0b3a5; border-radius: 50%; }
+.compact-app .reference-check.done { background: var(--green); color: var(--on-accent); }
+.compact-app .reference-graph { height: 100%; min-height: 0; }
+.object-with-discussion { display:flex; flex-direction:column; height:100%; min-height:0; }
+.object-with-discussion > .network-workbench { flex:1 1 0; height:auto; min-height:0; overflow:hidden; }
+.object-with-discussion > .object-context { flex:none; }
+.object-with-discussion > .practice-page { flex:1; min-height:0; overflow:auto; }
+.object-discussion-action { flex:none; display:flex; justify-content:flex-end; padding:5px 12px; border-top:1px solid var(--border); background:var(--surface, #fff); }
+.object-discussion-action .text-button { display:inline-flex; align-items:center; gap:6px; font-size:12px; }
+.compact-app .reference-chat-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 24px; font-size: 12px; color: var(--secondary); }
+.compact-app .reference-message { margin-bottom: 32px; }
+.compact-app .reference-message.user { background: #f1f4f2; padding: 12px 14px; border-radius: 9px; }
+.compact-app .reference-byline { display: block; font-size: 12px; color: var(--secondary); margin-bottom: 10px; }
+.compact-app .reference-message > p { white-space: pre-wrap; }
+.compact-app.is-reading .objects-panel { position: absolute; right: 0; top: 0; bottom: 0; width: min(336px, 100%); min-width: 0; height: 100%; z-index: 42; border-left: 1px solid var(--border); box-shadow: -12px 0 36px #2030261a; }
+.compact-app .object-navigation-scrim { position: absolute; inset: 0; background: #23362c0a; z-index: 41; cursor: default; }
+@container companion (max-width: 600px) {
+  .network-toolbar { flex-wrap: wrap; padding: 8px; gap: 6px; }
+  .network-search { width: 150px; flex: 1; }
+  .network-hint { display: none; }
+  .network-inspector { position: absolute; right: 8px; top: 8px; bottom: 8px; width: min(260px, calc(100% - 16px)); max-height: calc(100% - 16px); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 6px 24px #2030261a; }
+  .reference-document { padding: 18px; }
+  .questions-page { padding: 16px; }
+}
+@media (max-width: 760px) {
+  .compact-app .project-topbar { gap: 6px; }
+  .compact-app .project-topbar > .flex { flex: 1; }
+  .compact-app .project-title-button strong { max-width: 100px; }
+  .compact-app .study-modes button { padding: 5px 8px; }
+  .compact-app .project-top-actions .topbar-divider { display: none; }
+  .compact-app .objects-toggle { min-height: 32px; min-width: 30px; padding: 4px; }
+  .compact-app .objects-toggle > span { display: none; }
+  .compact-app .compare-source-button span { display: none; }
+}
+@media (max-width: 520px) {
+  .compact-app .project-title-button > svg { display: none; }
+  .compact-app .project-title-button strong { max-width: 64px; font-size: 13px; }
+  .compact-app .project-top-actions { gap: 3px; }
+  .compact-app .project-top-actions > .icon-button[aria-label="搜索项目知识"] { display: none; }
+  .compact-app .study-modes button { gap: 4px; padding-inline: 6px; }
+  .compact-app .study-modes button > svg { display: none; }
+  .compact-app .project-top-actions .resume-reading-detail { display: none; }
+  .compact-app .project-top-actions .new-chat-button { font-size: 0; padding-inline: 7px; }
+  .compact-app .project-tabs { padding-inline: 6px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .compact-app :is(.study-modes button, .companion-return, .study-splitter) { transition: background-color 120ms ease, color 120ms ease; }
+}

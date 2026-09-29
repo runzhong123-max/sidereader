@@ -1,0 +1,129 @@
+.reader .document-scroll {
+  /* The reader restores its own passage anchor across pane resizing. */
+  overflow-anchor: none;
+  scroll-behavior: auto;
+}
+
+.reader-selection-popover {
+  position: fixed;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  width: 248px;
+  height: 40px;
+  padding: 4px;
+  gap: 2px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 4px 16px #20302620, 0 1px 3px #2030260a;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.reader-selection-popover button {
+  display: inline-flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.reader-selection-popover button:hover { background: var(--sage); }
+.reader-selection-popover button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.reader-selection-popover button:disabled { color: var(--secondary); cursor: default; }
+.reader-selection-popover button + button { border-left: 1px solid var(--border); }
+.reader-selection-error { position: absolute; top: calc(100% + 6px); right: 0; padding: 6px 8px; background: var(--surface); color: var(--danger); box-shadow: 0 2px 8px #20302620; border-radius: 5px; font-size: 12px; white-space: nowrap; }
+
+.compact-app.paper-tree-app .reader { container: reading-pane / inline-size; }
+
+.compact-app.paper-tree-app .reader-footer {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  gap:8px;
+  height:40px;
+  min-height:40px;
+  padding:0 12px;
+  background:var(--surface);
+  position:relative;
+  z-index:15;
+  flex-shrink: 0;
+}
+.reader-footer-start { display:flex; align-items:center; gap:3px; min-width:0; max-width:100%; justify-self:start; }
+.reader-footer-start > .action-menu { flex-shrink:0; }
+.reader-return { display:inline-flex; align-items:center; gap:5px; min-width:0; min-height:32px; padding:0 6px; border-radius:5px; color:var(--secondary); font-size:11px; }
+.reader-return svg { flex-shrink:0; }
+.reader-return span { max-width:110px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.reader-return:hover { background:var(--canvas); color:var(--dark); }
+.reader-return:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.reader .document-scroll:focus-visible { outline:2px solid var(--focus); outline-offset:-2px; }
+.reader-footer-end { min-width:0; justify-self:end; }
+.reader-footer .pagination { justify-self:center; }
+.reader-settings-label { font-size:11px; white-space:nowrap; }
+.reader-page-question { display:flex; align-items:center; gap:6px; min-height:32px; padding:0 8px; color:var(--secondary); font-size:12px; border-radius:5px; white-space:nowrap; }
+.reader-page-question:hover { background:var(--canvas); color:var(--dark); }
+.reader-page-question:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+
+.reader .continuous-text-pages {
+  width: 100%;
+  min-width: 0;
+}
+
+.reader-selection-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  height: 30px;
+  white-space: nowrap;
+}
+
+.reader-selection-count {
+  color: var(--muted, #798477);
+  font-size: 10px;
+}
+
+.reader-ask-selection {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--sage);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.reader-ask-selection:hover {
+  background: var(--soft);
+}
+
+.reader-ask-selection:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .reader-selection-count {
+    display: none;
+  }
+}
+
+@container reading-pane (max-width:520px) {
+  .reader-settings-label, .reader-selection-count, .reader-return span { display:none; }
+  .reader-footer .pagination { gap:2px; }
+  .reader-selection-actions { gap:3px; }
+}

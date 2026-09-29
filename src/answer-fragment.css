@@ -1,0 +1,12 @@
+.answer-fragment { position: relative; min-width: 0; margin: 12px 0; }
+.answer-fragment > .answer-markdown > :first-child { margin-top: 0; }
+.answer-fragment > .answer-markdown > :last-child { margin-bottom: 0; }
+.answer-fragment-actions { position: absolute; z-index: 2; top: 4px; right: 4px; display: flex; align-items: center; gap: 4px; padding: 2px 4px; border: 0; border-radius: 3px; background: var(--surface); opacity: 0; pointer-events: none; }
+.answer-fragment:is(:hover, :focus-within) > .answer-fragment-actions { opacity: 1; pointer-events: auto; }
+.answer-fragment-actions > button { display: inline-flex; align-items: center; gap: 4px; min-height: 28px; padding: 4px 6px; margin: 0; color: var(--secondary); font-size: 11px; }
+.answer-fragment-actions > button:hover { color: var(--green); background: var(--green-light); }
+.answer-fragment-actions > button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.answer-fragment-actions .answer-fragment-drag { cursor: grab; }
+.answer-fragment .answer-code figcaption .answer-copy { display: none; }
+.answer-fragment-formula .answer-fragment-actions, .answer-fragment-table .answer-fragment-actions { top: -12px; }
+@media (hover: none) { .answer-fragment-actions { position: static; justify-content: flex-end; width: fit-content; margin: 4px 0 0 auto; opacity: 1; pointer-events: auto; } }

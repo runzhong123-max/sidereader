@@ -1,0 +1,231 @@
+.tutor .conversation {
+  overflow-anchor: none;
+  scroll-behavior: auto;
+}
+
+.tutor .conversation-content {
+  display: flow-root;
+  min-width: 0;
+}
+
+.tutor .message-reading-context {
+  margin: 0 0 7px;
+  color: var(--secondary);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.tutor .message-reading-context button {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 100%;
+  min-height: 27px;
+  padding: 2px 0;
+  border-radius: 4px;
+  color: var(--green);
+  text-align: left;
+}
+
+.tutor .message-reading-context button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tutor .message-reading-context p {
+  margin: 2px 0 9px;
+  padding-left: 9px;
+  border-left: 2px solid var(--border);
+  color: var(--secondary);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.tutor .message-reading-context.is-historical {
+  font-size: 11px;
+  color: var(--secondary);
+}
+
+.tutor .composer-wrap {
+  position: relative;
+}
+
+.tutor .composer {
+  overflow: visible;
+}
+
+.tutor .composer-bottom > .composer-scope {
+  min-width: 0;
+  flex: 1;
+}
+
+.tutor .composer-scope > svg {
+  flex-shrink: 0;
+}
+
+.tutor .composer-scope > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tutor .composer-settings {
+  margin-left: auto;
+}
+
+.tutor .composer-settings > .action-menu-trigger {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.compact-app .tutor .composer-bottom > .send {
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
+.tutor .tutor-return-latest {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  bottom: calc(100% + 9px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface, #fff);
+  color: var(--green);
+  box-shadow: 0 2px 8px #243b2c12;
+  font-size: 12px;
+}
+
+.tutor .reading-context-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 4px 6px;
+  margin-left: -5px;
+  border-radius: 5px;
+  color: var(--secondary);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tutor .reading-context-toggle:hover,
+.tutor .reading-context-toggle.is-locked {
+  background: var(--sage);
+  color: var(--green);
+}
+
+.tutor .reading-context-toggle:focus-visible,
+.tutor .message-reading-context button:focus-visible,
+.tutor .tutor-return-latest:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.tutor .message.is-source-focus {
+  border-radius: 7px;
+  outline: 2px solid #6c96784d;
+  outline-offset: 7px;
+}
+
+.tutor .tutor-selection-action {
+  position: fixed;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid #d5dfd7;
+  border-radius: 7px;
+  color: #fff;
+  background: #3f6250;
+  box-shadow: 0 3px 12px #172b2229;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tutor .tutor-selection-action:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.tutor .tutor-branch-context {
+  margin: 0 0 25px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--secondary);
+  font-size: 12px;
+}
+
+.tutor .tutor-branch-origin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tutor .tutor-branch-origin > span {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tutor .tutor-branch-origin button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 3px 0;
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+.tutor .tutor-branch-context summary {
+  margin-top: 5px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.tutor .tutor-branch-context summary::-webkit-details-marker {
+  display: none;
+}
+
+.tutor .branch-quote-preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.7;
+}
+
+.tutor .branch-quote-expand {
+  display: block;
+  margin-top: 3px;
+  color: var(--green);
+  font-size: 11px;
+}
+
+.tutor .tutor-branch-context details[open] .branch-quote-preview {
+  display: none;
+}
+
+.tutor .tutor-branch-context blockquote {
+  max-height: 260px;
+  margin: 8px 0 0;
+  padding-left: 10px;
+  border-left: 2px solid #c9d7ca;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}

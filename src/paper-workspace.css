@@ -1,0 +1,55 @@
+/* One sidebar paper tree; cards are arranged independently in the workspace. */
+.compact-app.paper-tree-app { --sidebar-width: 272px; }
+.paper-tree-app .page, .paper-tree-app .objects-panel { animation: none; }
+.compact-app.paper-tree-app .project-sidebar { display:flex; flex-direction:column; padding:18px 10px 0; overflow:hidden; }
+.paper-tree-app .tree-project-picker { display:flex; gap:5px; align-items:center; margin:20px 3px 12px; }
+.paper-tree-app .tree-project-picker select { width:0; flex:1; min-width:0; padding:8px; font-size:13px; background:var(--surface); border:1px solid var(--border); border-radius:7px; color:var(--dark); }
+.paper-tree-app .sidebar-bottom { flex-shrink:0; margin-top:0; padding:10px 8px 12px; }
+.compact-app.paper-tree-app .tree-topbar { min-width:0; gap:6px; height:44px; min-height:44px; padding:0 14px; position:relative; z-index:30; }
+.paper-tree-app .paper-location { flex:1; min-width:0; }
+.paper-tree-app .paper-location-menu { width:fit-content; max-width:100%; }
+.paper-tree-app .paper-location-menu > .action-menu-trigger { max-width:100%; min-width:0; color:var(--dark); font-weight:500; font-size:13px; padding:0 6px; gap:7px; }
+.paper-tree-app .paper-location-menu > .action-menu-trigger span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.paper-tree-app .paper-location-menu > .action-menu-trigger svg { flex-shrink:0; color:var(--muted); }
+.paper-tree-app .paper-location-current { padding:9px 10px; font-size:13px; font-weight:550; overflow-wrap:anywhere; }
+.paper-tree-app .action-menu-panel kbd { margin-left:auto; color:var(--muted); font-size:10px; white-space:nowrap; }
+.paper-tree-app .conversation-mode { display:flex; align-items:center; gap:7px; font-size:12px; }
+.paper-tree-app .conversation-mode .text-button { margin-left:auto; }
+.compact-app.paper-tree-app .study-workspace .reader-main { display:flex; flex-direction:column; min-height:0; }
+.compact-app.paper-tree-app .study-workspace .reader-main > .reader { flex:1; height:auto; min-height:0; }
+.paper-tree-app .scope-actions { display:flex; align-items:center; gap:6px; }
+.paper-tree-app .scope-actions { flex-wrap:wrap; }
+.paper-tree-app .scope-origin-link { display:flex; align-items:center; gap:5px; max-width:100%; color:var(--secondary); font-size:12px; margin-bottom:7px; text-align:left; }
+.paper-tree-app .paper-layout { display:flex; flex:1; min-height:0; }
+.paper-tree-app .paper-object-view { width:100%; border:0; padding:28px max(20px, calc((100% - 860px) / 2)); }
+/* Shared learning surfaces have one scroll owner in every placement. */
+.paper-tree-app .reference-scroll > .paper-workspace { height:auto; min-height:100%; }
+.paper-tree-app .reference-scroll .paper-layout { display:block; flex:none; }
+.paper-tree-app .reference-scroll .paper-object-view { overflow:visible; }
+.paper-tree-app .reference-document .reference-stage { display:flex; align-items:flex-start; gap:10px; }
+.paper-tree-app .reference-document .reference-stage > .reference-check { flex-shrink:0; margin-top:12px; }
+.paper-tree-app .reference-document .stage-card { min-width:0; border:0; padding:0; gap:8px; }
+.paper-tree-app .reference-document .stage-card > div:first-child { min-width:0; flex:1; }
+.paper-tree-app .reference-document .stage-actions { flex-wrap:wrap; align-content:flex-start; }
+.paper-tree-app .reference-document .object-workspace-heading { flex-wrap:wrap; gap:12px; }
+.paper-tree-app .reference-document .object-workspace-heading h1 { font-size:20px; }
+.paper-tree-app .paper-toolbar { gap:12px; padding:12px 20px; }
+.paper-tree-app .paper-toolbar > strong { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.paper-tree-app .source-manager > p { color:var(--secondary); font-size:13px; margin-bottom:16px; }
+.paper-tree-app .source-manager h3 { margin:24px 0 10px; font-size:14px; }
+.paper-tree-app .managed-source { display:flex; align-items:center; border-bottom:1px solid var(--border); padding:10px 0; margin-bottom:8px; }
+.paper-tree-app .managed-source > button:first-child { display:flex; flex:1; min-width:0; gap:10px; align-items:center; text-align:left; }
+.paper-tree-app .managed-source span { display:block; min-width:0; overflow-wrap:anywhere; }
+.paper-tree-app .managed-source small { display:block; font-size:12px; color:var(--secondary); margin-top:3px; }
+.paper-tree-app .source-manager .bookmark-entry { display:block; text-align:left; font-size:13px; padding:10px 0; }
+@media(min-width:761px) {
+  .compact-app.paper-tree-app.sidebar-collapsed .project-sidebar { display:none; }
+}
+@media(max-width:760px) {
+  .compact-app.paper-tree-app .project-sidebar { width:min(300px, calc(100vw - 44px)); padding:16px 10px 0; transition:none; }
+  .paper-tree-app .project-top-actions { flex-shrink:0; }
+  .compact-app.paper-tree-app .tree-topbar { padding:0 8px; }
+  .paper-tree-app .paper-toolbar { padding:10px 14px; }
+  .paper-tree-app .paper-object-view { padding:16px; }
+  .paper-tree-app .sidebar-scrim { backdrop-filter:none; }
+}

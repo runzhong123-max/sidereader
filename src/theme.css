@@ -1,0 +1,92 @@
+/* Two atmospheres share the same semantic colors and hierarchy. PDF pixels are
+   never inverted: figures, highlights and printed color remain source material. */
+:root {
+  --on-accent: #ffffff;
+  --link: #245b92;
+  --code-surface: #f2f4f5;
+  --syntax-keyword: #8545a0;
+  --syntax-string: #286638;
+  --syntax-number: #925516;
+  --graph-edge: #bdc6cb;
+  --graph-node: #677d73;
+  --graph-grid: #cdd3d94d;
+  --nav-surface: var(--canvas);
+  background: var(--canvas);
+}
+:root[data-theme="dark"] {
+  --ink: #e5e8ea;
+  --secondary: #adb5ba;
+  --muted: #adb5ba;
+  --surface: #222426;
+  --canvas: #1b1d1f;
+  --reader-canvas: #151719;
+  --soft: #2b2e30;
+  --border: #41464a;
+  --green: #a1cbb4;
+  --dark: #c2e1cf;
+  --sage: #31463b;
+  --green-light: var(--sage);
+  --focus: #8fbbef;
+  --on-accent: #17251c;
+  --danger: #ffb2a7;
+  --danger-soft: #472c29;
+  --success: #a1cbb4;
+  --success-soft: #2d4034;
+  --warning: #e6c087;
+  --warning-soft: #413625;
+  --link: #9ac4f0;
+  --code-surface: #1c1f21;
+  --syntax-keyword: #dab4ed;
+  --syntax-string: #a1d8af;
+  --syntax-number: #eac48d;
+  --graph-edge: #62746a;
+  --graph-node: #a3b9ab;
+  --graph-grid: #79928533;
+  color-scheme: dark;
+}
+body { background: var(--canvas); color: var(--ink); }
+::selection { background: var(--sage); color: var(--ink); }
+input, textarea, select { color: var(--ink); }
+.theme-toggle { display: inline-flex; align-items: center; gap: 5px; padding: 6px 4px; min-height: 32px; color: var(--secondary); font-size: 12px; border-radius: 5px; }
+.theme-toggle:hover { color: var(--ink); background: var(--soft); }
+.reading-workbench .sidebar-bottom { flex-wrap: wrap; column-gap: 14px; row-gap: 2px; }
+.reading-workbench .sidebar-bottom .project-local { flex-basis: 100%; margin-top: 2px; }
+.button, .icon-button, .pagination input { color: var(--secondary); }
+.button { border-color: var(--border); }
+.button:hover, .icon-button:hover { color: var(--ink); background: var(--soft); border-color: var(--border); }
+.button.primary, .compact-app .tutor .send { background: var(--green); color: var(--on-accent); border-color: var(--green); }
+.button.primary:hover, .compact-app .tutor .send:hover { background: color-mix(in srgb, var(--green) 87%, var(--ink)); }
+.text-button { color: var(--green); }
+.text-button:hover { color: var(--dark); }
+.modal { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.modal::backdrop { background: #0b121166; }
+.compact-app .tutor, .compact-app .project-main, .compact-app .reference-panel { background: var(--surface); }
+.floating-object-resize { background: var(--surface); color: var(--secondary); }
+.floating-object-header:focus-visible, .floating-object-actions button:focus-visible, .floating-object-resize:focus-visible { outline-color: var(--focus); }
+.workspace-drop-zone, .floating-dock-target, .floating-object-dock-hint { color: var(--green); border-color: var(--green); background: color-mix(in srgb, var(--sage) 92%, transparent); }
+.workspace-drop-zone > span, .floating-dock-target:is(.is-left,.is-right) > span { color: var(--green); background: var(--surface); }
+.floating-dock-target.is-active { color: var(--dark); border-color: var(--green); background: var(--sage); }
+.reading-workbench .object-drop-preview { background: color-mix(in srgb, var(--sage) 90%, transparent); }
+.compact-app .reference-message.user { background: var(--soft); }
+.object-feedback { color: var(--ink); }
+.object-hint { color: var(--warning); }
+.reading-workbench .tree-project-picker select { background: transparent; color: var(--ink); }
+.answer-markdown :not(pre) > code { color: var(--ink); background: var(--code-surface); }
+.answer-code { color: var(--ink); background: var(--code-surface); }
+.answer-table th { background: var(--soft); }
+.answer-markdown a { color: var(--link); }
+.compact-app .answer-markdown .inline-citation { background: var(--sage); color: var(--green); }
+.learning-question fieldset label { color: var(--ink); }
+.learning-question fieldset label:has(input:checked) { color: var(--ink); background: var(--sage); border-color: var(--green); }
+.learning-question input[type="radio"] { accent-color: var(--green); }
+.answer-option.correct, .answer-explanation { color: var(--success); background: var(--success-soft); }
+.answer-option.incorrect { color: var(--danger); background: var(--danger-soft); }
+.save-error-banner { color: var(--warning); background: var(--warning-soft); }
+.proposal-concepts { color: var(--ink); background: var(--soft); }
+.proposal-destinations button { color: var(--green); }
+:root[data-theme="dark"] .brand-mark { background: #355d4a; color: #fff; }
+:root[data-theme="dark"] .pdf-paper { color-scheme: light; background: #fff; }
+:root[data-theme="dark"] .pdf-paper ::selection { background: #c5ddbeaa; color: transparent; }
+/* Legacy settings/import/editor panels use the same neutral surfaces. */
+:root[data-theme="dark"] :is(.modal-intro,.modal label,.modal-hint,.model-config-note,.settings-provider-note,.empty-state p,.paper-tree p) { color: var(--secondary); }
+:root[data-theme="dark"] :is(.import-dropzone,.empty-state,.model-config-section,.model-provider-card,.question-editor,.question-editor-option,.library-note,.source-card,.reading-context-excerpt) { background: var(--soft); border-color: var(--border); color: var(--ink); }

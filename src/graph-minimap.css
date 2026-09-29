@@ -1,0 +1,38 @@
+.graph-minimap {
+  position: absolute;
+  left: 12px;
+  bottom: 54px;
+  z-index: 2;
+  width: 110px;
+  height: 70px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  cursor: crosshair;
+  opacity: .82;
+  transition: opacity 120ms ease;
+  touch-action: manipulation;
+}
+.graph-minimap:hover,
+.graph-minimap:focus-visible { opacity: 1; }
+.graph-minimap:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.graph-minimap > svg {
+  display: block;
+  width: 110px;
+  height: 70px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.graph-minimap-dot { fill: var(--secondary); opacity: .65; }
+.graph-minimap-dot.is-root { fill: var(--green); opacity: 1; }
+.graph-minimap-viewport {
+  fill: color-mix(in srgb, var(--green) 8%, transparent);
+  stroke: var(--green);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+@media (prefers-reduced-motion: reduce) {
+  .graph-minimap { transition: none; }
+}

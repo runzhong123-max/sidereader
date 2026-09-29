@@ -1,0 +1,258 @@
+/* The conversation keeps one reading column and one stable place to compose. */
+.compact-app .tutor.conversation-experience .conversation {
+  padding: 24px 22px 16px;
+}
+.compact-app .tutor.conversation-experience .conversation-content {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+}
+.compact-app .tutor.conversation-experience .message {
+  max-width: none;
+  margin: 0 0 28px;
+}
+.compact-app .tutor.conversation-experience .message.user {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  padding: 4px 0 4px 14px;
+  border-left: 2px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+.compact-app .tutor.conversation-experience .message-text,
+.compact-app .tutor.conversation-experience .answer-markdown {
+  font-size: 15px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.compact-app .tutor.conversation-experience .message-byline {
+  margin-bottom: 8px;
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 500;
+}
+.compact-app .tutor.conversation-experience .message-reading-context {
+  margin-bottom: 6px;
+}
+.compact-app .tutor.conversation-experience .message-reading-context p {
+  max-height: 4.9em;
+  overflow: hidden;
+}
+.compact-app .tutor.conversation-experience .paper-message-actions {
+  display: inline-flex;
+  margin: 5px 0 0 10px;
+}
+.compact-app .tutor.conversation-experience .paper-message-actions button {
+  min-height: 30px;
+  font-size: 12px;
+}
+.compact-app .tutor.conversation-experience .answer-sources {
+  margin-top: 10px;
+  border-color: var(--border);
+}
+.compact-app .tutor.conversation-experience .answer-sources > summary {
+  min-height: 28px;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.compact-app .tutor.conversation-experience .tutor-branch-context {
+  margin-bottom: 22px;
+  padding: 0 0 12px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+.compact-app .tutor.conversation-experience .tutor-branch-origin button {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.compact-app .tutor.conversation-experience .tutor-branch-origin button svg {
+  margin-right: 5px;
+  vertical-align: -2px;
+}
+.compact-app .tutor.conversation-experience .composer-wrap {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 808px;
+  margin-inline: auto;
+  padding: 10px 22px 8px;
+  box-sizing: border-box;
+  background: var(--surface);
+}
+.compact-app .tutor.conversation-experience .composer {
+  padding: 11px 12px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: none;
+}
+.compact-app .tutor.conversation-experience .composer:focus-within {
+  border-color: var(--green);
+  outline: 2px solid color-mix(in srgb, var(--green) 14%, transparent);
+  outline-offset: 1px;
+}
+.compact-app .tutor.conversation-experience .composer textarea {
+  display: block;
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+  max-height: 144px;
+  padding: 0;
+  margin: 0 0 5px;
+  overflow-y: auto;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.compact-app .tutor.conversation-experience .composer-bottom {
+  gap: 7px;
+  flex-wrap: nowrap;
+}
+.compact-app .tutor.conversation-experience .reading-context-toggle {
+  min-width: 0;
+  min-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.compact-app .tutor.conversation-experience .composer-scope { font-size: 12px; }
+.compact-app .tutor.conversation-experience .send {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+.compact-app .tutor.conversation-experience .composer-settings > .action-menu-trigger {
+  min-width: 30px;
+  min-height: 30px;
+}
+.compact-app .tutor.conversation-experience .composer-hint {
+  min-height: 15px;
+  margin-top: 5px;
+  font-size: 11px;
+  text-align: right;
+}
+.compact-app .tutor.conversation-experience .composer-concept-references {
+  margin-bottom: 7px;
+}
+.compact-app .tutor.conversation-experience .composer-concept-chip {
+  padding: 3px 7px;
+  background: var(--sage);
+}
+.compact-app .tutor.conversation-experience .composer-concept-chip > button {
+  width: 26px;
+  height: 26px;
+}
+.compact-app .tutor.conversation-experience .selection-chip {
+  align-items: flex-start;
+  margin: 0 0 9px;
+  padding: 7px 9px;
+  border: 0;
+  border-left: 2px solid #aac0ae;
+  border-radius: 0;
+  background: var(--soft);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.conversation-setting-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 9px 8px;
+  font-size: 12px;
+}
+.conversation-setting-field select {
+  min-width: 96px;
+  min-height: 30px;
+  padding: 3px 6px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+.conversation-setting-field small,
+.conversation-setting-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--secondary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.conversation-setting-note { padding: 7px 8px; }
+.compact-app .tutor.conversation-experience.is-empty {
+  justify-content: flex-start;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.compact-app .tutor.conversation-experience.is-empty .conversation {
+  flex: 1;
+  overflow: auto;
+}
+.compact-app .tutor.conversation-experience .tutor-welcome {
+  max-width: 560px;
+  padding-top: clamp(16px, 6vh, 56px);
+  margin-inline: auto;
+}
+.compact-app .tutor.conversation-experience .tutor-welcome h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+.compact-app .tutor.conversation-experience .tutor-welcome > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.compact-app .tutor.conversation-experience .suggestions {
+  gap: 3px;
+  margin-top: 22px;
+}
+.compact-app .tutor.conversation-experience .suggestions > button {
+  min-height: 39px;
+  padding: 8px 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--green);
+  font-size: 13px;
+  text-align: left;
+}
+.compact-app .tutor.conversation-experience .suggestions > button > svg:last-child {
+  display: block;
+  margin-left: auto;
+  opacity: 0.6;
+}
+.conversation-paper-navigation .conversation-paper-trigger {
+  min-height: 28px;
+  padding: 4px 8px;
+  border-color: transparent;
+  background: var(--surface);
+  box-shadow: none;
+  font-size: 12px;
+}
+.conversation-graph-card.learning-object > header {
+  min-height: 39px;
+  padding: 7px 0;
+  background: transparent;
+}
+@media (hover: hover) and (pointer: fine) {
+  .compact-app .tutor.conversation-experience .message.assistant > .answer-copy,
+  .compact-app .tutor.conversation-experience .composer-hint { opacity: 0; }
+  .compact-app .tutor.conversation-experience .message.assistant:hover > .answer-copy,
+  .compact-app .tutor.conversation-experience .message.assistant:focus-within > .answer-copy,
+  .compact-app .tutor.conversation-experience .composer-wrap:hover .composer-hint,
+  .compact-app .tutor.conversation-experience .composer-wrap:focus-within .composer-hint { opacity: 1; }
+}
+@media (max-width: 700px) {
+  .compact-app .tutor.conversation-experience .conversation { padding: 18px 16px 12px; }
+  .compact-app .tutor.conversation-experience .composer-wrap { padding: 8px 14px 7px; }
+  .compact-app .tutor.conversation-experience .composer textarea { font-size: 16px; }
+  .compact-app .tutor.conversation-experience .tutor-welcome { padding-top: 16px; }
+}

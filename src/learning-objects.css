@@ -1,0 +1,328 @@
+.learning-object {
+  margin: 24px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  min-width: 0;
+}
+.learning-object.is-embedded { margin: 0; border: 0; border-radius: 0; overflow: visible; background: transparent; }
+.learning-object + .learning-object { padding-top: 20px; border-top: 1px solid var(--border); }
+.learning-object.is-embedded > .learning-question { padding: 0; }
+.learning-question .question-deferred { color: var(--secondary); font-size: 12px; }
+.learning-question .question-ask { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; color: var(--green); font-size: 12px; }
+.learning-object > header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 8px;
+  background: transparent;
+  border: 0;
+}
+.learning-object > header > span {
+  font-size: 11px;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+.learning-object > header strong {
+  font-size: 13px;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.learning-object > header button {
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 3px;
+}
+.learning-object > header .learning-object-title { display:flex; align-items:center; justify-content:space-between; gap:8px; flex:1; min-width:0; padding:0; color:inherit; text-align:left; font-size:14px; font-weight:600; }
+.learning-object-title > span { min-width:0; overflow-wrap:anywhere; }
+.learning-object-title[draggable="true"] { cursor:grab; }
+.learning-object-title[draggable="true"]:active { cursor:grabbing; }
+.learning-object-title .object-drag-handle { flex-shrink:0; color:var(--secondary); opacity:.5; }
+.learning-object-title:is(:hover,:focus-visible) .object-drag-handle { opacity:1; }
+.learning-object-title:focus-visible { outline:2px solid var(--focus); outline-offset:3px; }
+.learning-object > .answer-markdown,
+.learning-question,
+.object-trace {
+  padding: 4px 0 8px;
+}
+.learning-object .answer-markdown {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.learning-object .answer-code {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+.learning-object .answer-copy {
+  margin-top: 8px;
+}
+.learning-question fieldset {
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 2px;
+  margin: 14px 0;
+}
+.learning-question fieldset label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 8px;
+  margin-left: -8px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.learning-question fieldset label:hover {
+  background: var(--soft);
+}
+.learning-question fieldset label:has(input:checked) {
+  background: var(--sage);
+}
+.learning-question input[type="radio"] {
+  width: auto;
+  accent-color: var(--green);
+  flex: none;
+}
+.object-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.learning-question > small {
+  display: block;
+  color: var(--secondary);
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.object-feedback {
+  padding: 0 0 0 12px;
+  margin-top: 16px;
+  border-left: 2px solid var(--border);
+  background: transparent;
+  border-radius: 0;
+  font-size: 14px;
+}
+.object-feedback > strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.object-feedback p {
+  margin: 8px 0;
+}
+.object-hint {
+  font-size: 13px;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--warning);
+  background: transparent;
+}
+.object-plot {
+  margin: 0;
+  padding: 8px 0;
+}
+.object-plot > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 260px;
+}
+.object-plot figcaption {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.object-plot details {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.object-plot pre {
+  max-height: 220px;
+  overflow: auto;
+}
+.paper-message-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+.paper-message-actions button,
+.source-paper-open {
+  font-size: 12px;
+  color: var(--green);
+  min-height: 30px;
+  padding: 4px 0;
+}
+.attempt-context-status {
+  font-size: 11px;
+  color: var(--secondary);
+  padding: 4px 0 8px;
+}
+.paper-workspace {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.paper-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  min-height: 50px;
+}
+.paper-toolbar strong {
+  flex: 1;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.paper-toolbar > button:first-child {
+  max-width: 32%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.paper-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+.paper-object-view {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  background: var(--surface);
+  padding: 22px;
+}
+.paper-object-view .learning-object {
+  margin: 0 auto 16px;
+  max-width: 1000px;
+}
+.paper-tutor {
+  width: clamp(320px, 32%, 430px);
+  display: flex;
+  min-width: 0;
+  border-left: 1px solid var(--border);
+}
+.compact-app .paper-tutor .tutor.standalone {
+  padding: 0;
+}
+.compact-app .paper-tutor .tutor.standalone .conversation {
+  padding: 18px;
+}
+.compact-app .paper-tutor .tutor.standalone .composer-wrap {
+  padding: 10px 16px;
+}
+.compact-app .paper-tutor .tutor.standalone .tutor-welcome h3 {
+  font-size: 21px;
+}
+.compact-app .paper-tutor .tutor.standalone.is-empty {
+  justify-content: flex-start;
+}
+.compact-app .paper-tutor .tutor.standalone .suggestions {
+  display: none;
+}
+.paper-tree {
+  padding: 4px 12px 16px;
+}
+.paper-tree p {
+  font-size: 12px;
+  color: var(--secondary);
+  line-height: 1.7;
+  margin: 8px 0;
+}
+.paper-tree ul {
+  list-style: none;
+  padding-left: 12px;
+  margin: 6px 0;
+  border-left: 1px solid #d7e0d9;
+}
+.paper-tree li > button {
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+  width: 100%;
+}
+.paper-tree li > button[aria-current="page"] {
+  background: #eaf1ec;
+}
+.paper-tree li > button small {
+  display: block;
+  font-size: 10px;
+  color: #69776e;
+  margin-bottom: 3px;
+}
+.paper-tree li > button span {
+  display: block;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.paper-tree-root {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 900px) {
+  .paper-layout {
+    display: block;
+    overflow: auto;
+  }
+  .paper-object-view {
+    overflow: visible;
+    padding: 14px;
+  }
+  .paper-tutor {
+    width: 100%;
+    min-height: 480px;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .paper-toolbar {
+    gap: 6px;
+    padding: 8px;
+  }
+}
+
+.learning-object {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.75;
+}
+.learning-object .answer-markdown {
+  font-size: 15px;
+}
+.paper-source-links {
+  margin: 14px 0;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.paper-source-links > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pdf-render-status { position:absolute; top:24px; left:0; right:0; text-align:center; font-size:12px; color:var(--secondary); pointer-events:none; }

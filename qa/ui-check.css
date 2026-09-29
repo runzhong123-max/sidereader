@@ -1,0 +1,27 @@
+.qa-shell { min-height: 100vh; color: var(--ink); background: var(--surface); }
+.qa-header { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 24px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.qa-header h1 { font-size: 20px; }
+.qa-header p, .qa-instruction { color: var(--secondary); font-size: 13px; line-height: 1.7; }
+.qa-header p { margin-top: 5px; }
+.qa-controls { display: flex; gap: 8px; flex: none; }
+.qa-scenes { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 24px; }
+.qa-scenes button { padding: 7px 11px; border-radius: 6px; font-size: 13px; }
+.qa-scenes button[aria-current="page"] { background: var(--sage); color: var(--green); }
+.qa-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 36px; max-width: 1360px; padding: 20px 24px; margin: auto; align-items: start; }
+.qa-stage { min-width: 0; padding: 8px 0; }
+.qa-instruction { margin-bottom: 20px; }
+.qa-observer { display: grid; gap: 28px; position: sticky; top: 16px; padding-left: 20px; border-left: 1px solid var(--border); }
+.qa-observer > section, .qa-reference-receiver { min-width: 0; padding: 0; }
+.qa-observer h2 { margin: 0 0 8px; font-size: 14px; }
+.qa-observer p, .qa-observer li { font-size: 12px; color: var(--secondary); line-height: 1.65; overflow-wrap: anywhere; }
+.qa-observer strong { font-size: 12px; }
+.qa-observer ul, .qa-observer ol { margin: 8px 0; padding-left: 20px; }
+.qa-reference-receiver[data-concept-drag-over="true"] { outline: 2px solid var(--green); background: var(--sage); }
+.qa-reference-receiver textarea { font-size: 13px; margin-top: 10px; min-height: 100px; }
+.qa-reference-fixture { padding: 8px 0; }
+.qa-citation-line { margin-top: 24px; font-size: 15px; }
+.qa-shell .qa-conversation.conversation { height: 520px; max-height: 65vh; padding: 8px 0; overflow: auto; }
+.qa-graph-spacer { min-height: 260px; color: var(--secondary); line-height: 1.8; }
+.qa-graph-after { min-height: 120px; padding-top: 24px; color: var(--secondary); }
+.qa-fullgraph { width: 620px; max-width: 100%; height: 500px; overflow: hidden; }
+@media (max-width: 940px) { .qa-layout { grid-template-columns: minmax(0, 1fr); } .qa-observer { position: static; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding-left: 0; border-left: 0; } .qa-header { align-items: start; flex-wrap: wrap; } }

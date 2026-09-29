@@ -1,0 +1,136 @@
+.composer-preferences-row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  min-height: 30px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: var(--secondary);
+}
+
+.composer-context-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 10px;
+  min-width: 0;
+  margin-bottom: 4px;
+  color: var(--secondary);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.composer-context-summary span {
+  overflow-wrap: anywhere;
+}
+
+.answer-preference-field select:focus-visible {
+  outline: 2px solid #3269b4;
+  outline-offset: 2px;
+}
+
+.answer-preference-field select:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.answer-preferences {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.answer-preferences > summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-height: 30px;
+  padding: 3px 0 3px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  list-style: none;
+  line-height: 1.4;
+}
+
+.answer-preferences > summary::-webkit-details-marker {
+  display: none;
+}
+
+.answer-preferences > summary:hover,
+.answer-preferences[open] > summary {
+  color: var(--ink);
+}
+
+.answer-preferences > summary:focus-visible {
+  outline: 2px solid #3269b4;
+  outline-offset: 3px;
+}
+
+.answer-preference-value {
+  color: var(--ink);
+}
+
+.answer-preferences-panel {
+  position: absolute;
+  z-index: 12;
+  bottom: calc(100% + 8px);
+  right: 0;
+  width: min(100%, 340px);
+  max-height: min(38vh, 260px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 14px;
+  border: 1px solid var(--border, #e2e7e2);
+  border-radius: 12px;
+  background: var(--surface, #fff);
+  box-shadow: 0 5px 24px #26362c14;
+}
+
+.answer-preference-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(82px, 120px);
+  align-items: center;
+  gap: 7px 12px;
+}
+
+.answer-preference-field + .answer-preference-field {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border, #e2e7e2);
+}
+
+.answer-preference-field label {
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.answer-preference-field select {
+  min-width: 0;
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid var(--border, #e2e7e2);
+  border-radius: 6px;
+  padding: 4px 7px;
+  background: var(--surface, #fff);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+}
+
+.answer-preference-field small {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+
+@media (max-width: 700px) {
+  .composer-preferences-row {
+    flex-wrap: wrap;
+    gap: 3px 10px;
+  }
+}

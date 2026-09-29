@@ -1,0 +1,732 @@
+/* Shared reading UI tokens. Product chrome stays quieter than the book and answer. */
+:root {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Segoe UI",
+    sans-serif;
+  --ink: #252a2d;
+  --secondary: #5f676c;
+  --surface: #ffffff;
+  --canvas: #f4f5f5;
+  --reader-canvas: #e9ebeb;
+  --green: #355d4a;
+  --dark: #274737;
+  --muted: #5f676c;
+  --border: #d8ddde;
+  --soft: #f4f5f5;
+  --sage: #eaf1ed;
+  --green-light: var(--sage);
+  --focus: #2865a6;
+  --danger: #a33a32;
+  --danger-soft: #fff1ef;
+  --success: #355d4a;
+  --success-soft: #edf5ef;
+  --warning: #825916;
+  --warning-soft: #fff7e6;
+  color: var(--ink);
+  color-scheme: light;
+}
+.compact-app {
+  background: var(--surface);
+}
+.compact-app .project-sidebar {
+  background: var(--canvas);
+}
+.compact-app .project-topbar,
+.compact-app .reader-toolbar {
+  background: var(--surface);
+}
+.compact-app .project-tabs {
+  background: var(--soft);
+}
+.compact-app .project-tab.active {
+  background: var(--surface);
+}
+.compact-app .project-item {
+  color: var(--secondary);
+  font-size: 14px;
+}
+.compact-app .project-item.active {
+  color: var(--dark);
+  background: var(--sage);
+}
+.compact-app .projects-caption,
+.compact-app .project-local {
+  font-size: 12px;
+  color: var(--secondary);
+  letter-spacing: 0;
+}
+.compact-app .add-project-link,
+.compact-app .settings-link,
+.compact-app .objects-toggle {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.compact-app .project-tab > button[role="tab"] {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.compact-app .project-tab.active > button[role="tab"] {
+  color: var(--green);
+}
+.compact-app .project-title-button strong {
+  font-size: 14px;
+  color: var(--ink);
+}
+.compact-app .new-chat-button {
+  font-size: 13px;
+  min-height: 34px;
+}
+.compact-app .icon-button {
+  min-width: 30px;
+  min-height: 30px;
+  place-items: center;
+}
+.compact-app .tab-close {
+  min-width: 26px;
+  min-height: 26px;
+}
+.compact-app .reader-tools,
+.compact-app .reader-footer,
+.compact-app .reader-title {
+  font-size: 12px;
+  color: var(--secondary);
+}
+.compact-app .pagination input {
+  font-size: 12px;
+  min-width: 38px;
+  min-height: 28px;
+}
+.compact-app .objects-panel {
+  background: var(--surface);
+  animation: none;
+}
+.compact-app .object-section summary {
+  font-size: 14px;
+  color: var(--ink);
+  min-height: 44px;
+}
+.compact-app .object-source-row strong,
+.compact-app .object-open,
+.compact-app .object-add,
+.compact-app .object-empty {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.compact-app .object-source-row small,
+.compact-app .objects-panel footer {
+  font-size: 12px;
+  color: var(--secondary);
+}
+.compact-app .mode-pill,
+.compact-app .conversation-mode,
+.compact-app .chat-history > summary {
+  font-size: 12px;
+  color: var(--secondary);
+}
+.compact-app
+  :is(button, a, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.compact-app :is(button, summary) {
+  touch-action: manipulation;
+}
+.compact-app summary {
+  cursor: pointer;
+}
+.compact-app .tutor {
+  background: var(--surface);
+  min-width: 0;
+}
+.compact-app .tutor-header strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+.compact-app .tutor-context {
+  color: var(--secondary);
+  font-size: 12px;
+  padding: 8px 20px;
+  min-height: 38px;
+}
+.compact-app .tutor-context button {
+  min-width: 28px;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+}
+.compact-app .conversation {
+  padding: 24px 20px;
+  overscroll-behavior: contain;
+  overflow-anchor: none;
+}
+.compact-app .tutor.standalone .conversation {
+  padding: 24px 32px;
+}
+.compact-app .tutor-welcome {
+  padding-top: 30px;
+}
+.compact-app .tutor.standalone .tutor-welcome {
+  max-width: 680px;
+  padding-top: clamp(25px, 6vh, 70px);
+}
+.compact-app .tutor-welcome h3 {
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-weight: 600;
+}
+.compact-app .tutor.standalone .tutor-welcome h3 {
+  font-size: 30px;
+}
+.compact-app .tutor-welcome > p {
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 60ch;
+}
+.compact-app .tutor .suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 24px;
+}
+.compact-app .tutor .suggestions > button {
+  min-height: 48px;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 0;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: none;
+  transform: none;
+}
+.compact-app .tutor .suggestions > button:hover {
+  color: var(--green);
+  background: var(--soft);
+}
+.compact-app .tutor .suggestions > button > svg {
+  color: var(--secondary);
+}
+.compact-app .tutor .local-notice {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.8;
+}
+.compact-app .tutor .local-notice button {
+  color: var(--green);
+  min-height: 28px;
+}
+.compact-app .tutor .message {
+  margin-bottom: 28px;
+  min-width: 0;
+}
+.compact-app .tutor.standalone .message {
+  max-width: 720px;
+}
+.compact-app .tutor .message.user {
+  background: var(--soft);
+  color: var(--ink);
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.compact-app .tutor .message-text {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.85;
+}
+.compact-app .tutor .message.error .message-text {
+  color: var(--danger);
+}
+.compact-app .tutor .message-byline {
+  color: var(--secondary);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.compact-app .tutor .message-byline svg {
+  display: none;
+}
+.compact-app .tutor .composer-wrap {
+  padding: 10px 16px 12px;
+  background: var(--surface);
+}
+.compact-app .tutor.standalone .composer-wrap {
+  max-width: 784px;
+  padding: 10px 32px 18px;
+}
+.compact-app .tutor .composer {
+  padding: 12px;
+  border: 1px solid #cbd2d0;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.compact-app .tutor .composer:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.compact-app .tutor .composer textarea {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 52px;
+}
+.compact-app .tutor .composer textarea:focus-visible {
+  outline: none;
+}
+.compact-app .tutor .composer textarea::placeholder {
+  color: var(--secondary);
+}
+.compact-app .tutor .composer-bottom {
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.compact-app .tutor .composer-bottom > span {
+  color: var(--secondary);
+  font-size: 12px;
+}
+.compact-app .tutor .send {
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  background: var(--green);
+  color: #fff;
+}
+.compact-app .tutor .send:disabled,
+.compact-app .tutor .send:disabled:hover {
+  background: var(--soft);
+  color: var(--secondary);
+}
+.compact-app .tutor .composer-hint {
+  font-size: 11px;
+  color: var(--secondary);
+  margin-top: 8px;
+}
+.compact-app .tutor .page-image-toggle {
+  color: var(--green);
+  font-size: 11px;
+  min-height: 28px;
+  margin: 0;
+}
+.teaching-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--secondary);
+  flex-wrap: wrap;
+}
+.teaching-controls select {
+  font-size: 12px;
+  padding: 5px 7px;
+  min-height: 30px;
+  border: 0;
+  background: var(--soft);
+  color: var(--green);
+}
+.teaching-controls > span {
+  margin-left: auto;
+  font-size: 11px;
+}
+.compact-app .tutor .thinking {
+  margin: 12px 0;
+  color: var(--secondary);
+}
+.compact-app .tutor .thinking small {
+  font-size: 13px;
+}
+.compact-app .tutor .selection-chip {
+  color: var(--secondary);
+  background: transparent;
+  font-size: 12px;
+}
+.answer-markdown {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.answer-markdown > :first-child {
+  margin-top: 0;
+}
+.answer-markdown p {
+  margin: 0 0 14px;
+}
+.answer-markdown h3,
+.answer-markdown h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 650;
+  margin: 24px 0 10px;
+  color: var(--ink);
+}
+.answer-markdown strong {
+  font-weight: 650;
+}
+.answer-markdown ul,
+.answer-markdown ol {
+  padding-left: 1.4em;
+  margin: 12px 0 16px;
+}
+.answer-markdown li {
+  padding-left: 3px;
+  margin: 6px 0;
+}
+.answer-markdown li > p {
+  margin: 4px 0;
+}
+.answer-markdown blockquote {
+  margin: 16px 0;
+  border-left: 3px solid #91ab99;
+  padding: 2px 0 2px 14px;
+  color: var(--secondary);
+}
+.answer-markdown blockquote > p:last-child {
+  margin-bottom: 0;
+}
+.answer-markdown a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.answer-markdown :not(pre) > code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  background: var(--code-surface);
+  border-radius: 4px;
+  padding: 0.12em 0.3em;
+  font-size: 0.9em;
+  color: var(--ink);
+}
+.answer-code {
+  margin: 16px 0;
+  border: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--code-surface);
+  min-width: 0;
+}
+.answer-code figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  color: var(--secondary);
+  background: transparent;
+  font-size: 12px;
+}
+.answer-code pre {
+  padding: 14px;
+  margin: 0;
+  overflow: auto;
+  max-height: 420px;
+  font-size: 13px;
+  line-height: 1.7;
+  tab-size: 2;
+  white-space: pre;
+}
+.answer-code code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  overflow-wrap: normal;
+}
+.answer-copy {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 4px;
+  min-height: 28px;
+  color: var(--secondary);
+  font-size: 12px;
+}
+.answer-copy:hover {
+  color: var(--green);
+}
+.answer-code .hljs-keyword,
+.answer-code .hljs-selector-tag {
+  color: var(--syntax-keyword);
+}
+.answer-code .hljs-string,
+.answer-code .hljs-regexp {
+  color: var(--syntax-string);
+}
+.answer-code .hljs-number,
+.answer-code .hljs-literal {
+  color: var(--syntax-number);
+}
+.answer-code .hljs-title,
+.answer-code .hljs-built_in {
+  color: var(--link);
+}
+.answer-code .hljs-comment {
+  color: var(--secondary);
+}
+.answer-table {
+  overflow: auto;
+  margin: 16px 0;
+}
+.answer-table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+.answer-table th,
+.answer-table td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  min-width: 90px;
+  vertical-align: top;
+}
+.answer-table th {
+  background: var(--soft);
+  font-weight: 600;
+}
+.answer-markdown .katex {
+  font-size: 1.08em;
+}
+.answer-markdown .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 2px;
+  margin: 18px 0;
+}
+.answer-markdown .inline-citation {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: baseline;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0 2px;
+  border-radius: 5px;
+  background: var(--sage);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.answer-markdown .inline-citation:hover {
+  background: #d9e7de;
+}
+.answer-sources {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--secondary);
+}
+.answer-sources > summary {
+  font-size: 12px;
+  padding: 10px 0;
+  min-height: 34px;
+}
+.answer-sources > summary span {
+  padding-left: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.source-entry {
+  margin: 0 0 14px;
+}
+.source-entry > button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--green);
+}
+.source-entry > button > span:nth-child(2) {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.source-entry small {
+  display: inline;
+  font-size: 11px;
+  color: var(--secondary);
+  margin: 0;
+}
+.source-number {
+  align-self: flex-start;
+  background: var(--sage);
+  border-radius: 5px;
+  min-width: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 11px;
+}
+.compact-app .tutor .retrieval-routes {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--secondary);
+  padding: 10px 0;
+}
+.answer-followups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.answer-followups button,
+.retry-answer {
+  font-size: 12px;
+  padding: 7px 10px;
+  min-height: 32px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--green);
+}
+.answer-followups button:hover,
+.retry-answer:hover {
+  background: var(--sage);
+}
+.answer-image-note {
+  color: var(--secondary);
+  font-size: 13px;
+}
+@media (min-width: 1100px) {
+  .compact-app .book-workspace > .tutor {
+    width: clamp(320px, 28vw, 390px);
+  }
+}
+@media (max-width: 580px) {
+  .compact-app .tutor.standalone .conversation {
+    padding: 20px 18px;
+  }
+  .compact-app .tutor.standalone .composer-wrap {
+    padding: 8px 16px 12px;
+  }
+  .compact-app .tutor.standalone .tutor-welcome {
+    padding-top: 20px;
+  }
+  .compact-app .tutor.standalone .tutor-welcome h3 {
+    font-size: 25px;
+  }
+  .compact-app .tutor .composer textarea {
+    font-size: 16px;
+  }
+  .compact-app .teaching-controls > span {
+    display: none;
+  }
+  .compact-app .conversation-mode > span:nth-child(2) {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Content-first workspace: compact chrome, generous reading surface. */
+.compact-app { --sidebar-width: 176px; }
+.compact-app .project-sidebar { width: var(--sidebar-width); padding: 20px 10px 0; }
+.compact-app .project-sidebar .brand { font-size: 18px; gap: 7px; padding: 0 6px; }
+.compact-app .project-sidebar .brand-mark { width: 28px; height: 28px; }
+.compact-app .projects-caption { margin: 24px 0 8px; }
+.compact-app .project-item { padding: 10px; font-size: 13px; }
+.compact-app .main-shell { margin-left: var(--sidebar-width); width: 0; flex: 1 1 0%; }
+.compact-app .project-topbar { height: 48px; min-height: 48px; padding: 0 18px; }
+.compact-app .project-top-actions { gap: 8px; }
+.compact-app .project-topbar > .flex { min-width: 0; }
+.compact-app .project-title-button { min-width: 0; }
+.compact-app .project-title-button strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.compact-app .project-tabs { height: 38px; min-height: 38px; padding: 0 12px; border-color: #e9eceb; }
+.compact-app .project-tab { border-right: 0; min-width: 125px; }
+.compact-app .project-tab.active { box-shadow: inset 0 1px #e1e7e3; border-radius: 7px 7px 0 0; }
+.compact-app .project-tab.active:after { background: var(--green); height: 2px; }
+.compact-app .desktop-sidebar-toggle { display: inline-flex; color: var(--secondary); }
+.compact-app .conversation-mode { margin: 12px 24px 0; gap: 10px; }
+.compact-app .mode-pill { border: 0; background: var(--sage); color: var(--green); padding: 5px 8px; }
+.compact-app .tutor.standalone .conversation { padding: 24px 32px 12px; min-height: 0; }
+.compact-app .tutor.standalone .message { max-width: 880px; }
+.compact-app .tutor.standalone .message-text { font-size: 16px; }
+.compact-app .tutor.standalone .composer-wrap { max-width: 944px; padding: 10px 32px 14px; flex-shrink: 0; }
+.compact-app .tutor.standalone .tutor-welcome { max-width: 880px; padding-top: 16px; }
+.compact-app .tutor.standalone .tutor-welcome h3 { font-size: 30px; letter-spacing: -0.035em; }
+.compact-app .tutor.standalone .tutor-welcome > p { font-size: 15px; max-width: 70ch; margin-top: 14px; }
+.compact-app .tutor.standalone.is-empty { justify-content: center; padding-bottom: clamp(0px, 5vh, 56px); overflow-y: auto; }
+.compact-app .tutor.standalone.is-empty .conversation { flex: 0 0 auto; overflow: visible; padding-top: 20px; padding-bottom: 18px; }
+.compact-app .tutor.standalone.is-empty .tutor-welcome { max-width: 760px; }
+.compact-app .tutor.standalone.is-empty .composer-wrap { max-width: 824px; margin: 0 auto; }
+.compact-app .tutor.standalone .suggestions { margin-top: 22px; gap: 4px; }
+.compact-app .tutor.standalone .suggestions > button { min-height: 42px; padding: 10px 12px; border: 0; border-radius: 8px; }
+.compact-app .tutor.standalone .suggestions > button:first-child { background: var(--sage); color: #294935; }
+.compact-app .tutor.standalone .suggestions > button > svg:last-child { display: block; margin-left: auto; opacity: .55; }
+.compact-app .tutor .composer { border-color: var(--border); border-radius: 6px; box-shadow: none; }
+.compact-app .tutor .composer textarea { resize: none; }
+.compact-app .tutor .teaching-controls { margin-bottom: 8px; }
+.compact-app .tutor .composer-hint { margin-top: 6px; }
+.compact-app .reader { background: var(--reader-canvas); }
+.compact-app .reader-toolbar { min-height: 44px; padding: 0 12px; gap: 4px; flex-shrink: 0; }
+.compact-app .reader-toolbar > .flex { min-width: 0; gap: 5px; }
+.compact-app .reader-title { flex: 1; min-width: 0; }
+.compact-app .reader-tools { flex-shrink: 0; gap: 2px; }
+.compact-app .reader-tools > .button { margin-left: 2px; font-size: 11px; padding: 5px 7px; }
+.compact-app .reader-zoom-reset { min-width: 40px; min-height: 30px; padding: 4px; font-size: 12px; border-radius: 5px; color: var(--secondary); }
+.compact-app .reader-zoom-reset:hover { background: var(--canvas); }
+.compact-app .document-scroll { min-width: 0; padding: 16px 16px 36px; background: var(--reader-canvas); }
+.compact-app .pdf-paper { box-shadow: 0 1px 4px #28352318; }
+.compact-app .reader-footer { height: 32px; min-height: 32px; padding: 0 12px; background: var(--soft); flex-shrink: 0; }
+.compact-app .tutor-header { height: 44px; padding: 0 16px; }
+.compact-app .tutor-context { min-height: 30px; padding: 2px 16px; }
+.compact-app .book-workspace .conversation { padding: 18px 16px; min-height: 0; }
+.compact-app .book-workspace .tutor-welcome { padding-top: 16px; }
+@media (min-width: 761px) {
+  .compact-app.sidebar-collapsed .project-sidebar { display: none; }
+  .compact-app.sidebar-collapsed .main-shell { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .compact-app .main-shell { margin-left: 0; }
+  .compact-app .project-sidebar { width: 210px; }
+  .compact-app .desktop-sidebar-toggle { display: none; }
+  .compact-app .project-topbar { padding: 0 10px; }
+  .compact-app .project-top-actions { gap: 4px; }
+  .compact-app .tutor.standalone .conversation { padding: 18px 22px 12px; }
+  .compact-app .tutor.standalone .composer-wrap { padding: 8px 22px 12px; }
+  .compact-app .conversation-mode { margin: 10px 20px 0; }
+}
+@media (max-width: 580px) {
+  .compact-app .tutor.standalone .tutor-welcome h3 { font-size: 26px; }
+  .compact-app .tutor.standalone.is-empty { justify-content: flex-start; padding-bottom: 0; }
+  .compact-app .tutor.standalone .conversation { padding: 14px 18px; }
+  .compact-app .tutor.standalone .composer-wrap { padding: 8px 18px 12px; }
+  .compact-app .document-scroll { padding: 12px 10px 32px; }
+  .compact-app .reader-title { max-width: 100px; }
+  .compact-app .reader-footer > span { font-size: 10px; }
+}
+@media (max-height: 680px) {
+  .compact-app .tutor.standalone.is-empty { justify-content: flex-start; padding-bottom: 0; }
+  .compact-app .tutor.standalone.is-empty .tutor-welcome { padding-top: 0; }
+  .compact-app .tutor.standalone.is-empty .conversation { padding-top: 16px; }
+}
+@media (max-width: 900px) {
+  .compact-app .book-workspace > .tutor {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    width: min(380px, 100%);
+    height: 100%;
+    box-shadow: -12px 0 35px #25392c18;
+  }
+}
+@media (max-width: 580px) {
+  .compact-app .reader-title,
+  .compact-app .reader-toolbar .toolbar-separator { display: none; }
+}

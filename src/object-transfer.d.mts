@@ -1,0 +1,15 @@
+export type WorkspaceTransferKind = "paper" | "object" | "card";
+export type WorkspaceDropPosition = "main" | "left" | "right" | "float";
+export const OBJECT_MIME: string;
+export const WORKSPACE_MIME: string;
+export const WORKSPACE_PAPER_MIME: string;
+export const WORKSPACE_OBJECT_MIME: string;
+export const WORKSPACE_CARD_MIME: string;
+export function readWorkspacePayload(raw: string, projectId: string): { id: string; kind: WorkspaceTransferKind } | undefined;
+export function readWorkspaceTransfer(raw: string, projectId: string): string | undefined;
+export function workspaceTransferKind(types: Iterable<string> | ArrayLike<string>): WorkspaceTransferKind | undefined;
+export function shouldPassWorkspaceTransfer(types: Iterable<string> | ArrayLike<string>, acceptsReferences?: boolean): boolean;
+export function shouldPassFloatingTransfer(types: Iterable<string> | ArrayLike<string>, hasReferenceReceiver?: boolean): boolean;
+export function writeWorkspaceTransfer(transfer: DataTransfer, projectId: string, nodeId: string, title: string, kind?: WorkspaceTransferKind): void;
+export function objectDropPosition(x: number, width: number, kind?: WorkspaceTransferKind, canSplit?: boolean, y?: number, height?: number): WorkspaceDropPosition;
+export function cardDockPosition(x: number, y: number, width: number, height: number, canSplit?: boolean): "main" | "left" | "right" | null;

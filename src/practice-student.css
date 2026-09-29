@@ -1,0 +1,7 @@
+.practice-page .practice-heading { justify-content: space-between; gap: 12px; }
+.practice-page .practice-heading > .action-menu { margin-left: auto; }
+.practice-page .practice-heading > .practice-file-meta { flex: 1; min-width: 0; margin: 0; }
+.practice-navigation { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--border); }
+.practice-navigation button { display: inline-flex; align-items: center; gap: 4px; min-height: 34px; font-size: 12px; }
+.practice-navigation select { min-width: 0; max-width: 55%; padding: 6px 8px; color: var(--secondary); background: var(--surface); border: 1px solid var(--border); border-radius: 5px; font-size: 12px; }
+.practice-completion { color: var(--green); font-size: 12px; line-height: 1.6; }

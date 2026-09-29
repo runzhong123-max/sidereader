@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+output/
+tmp/
+.playwright-cli/
+.local/
+public/pdfjs/
+*.tsbuildinfo
+.DS_Store
+*.log
